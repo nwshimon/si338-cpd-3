@@ -1,0 +1,314 @@
+
+/* =========================
+   Global Color Palette
+   ========================= */
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700');
+
+:root {
+  --color-primary: #9BCCE9;
+  --color-secondary: #102F42;
+  --color-background: white;
+  --color-text: black;
+  --color-accent: #FFEAD0;
+  --color-visited: #7C1334;
+}
+
+/* =========================
+   Base Styles
+   ========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--color-primary);
+    color: var(--color-text);
+    font-family: 'Open Sans', sans-serif;
+    /* INSPIRATION: CodePen Timeline Scribble (https://codepen.io/Fischaela/pen/NWNQKW) */
+    font-size: 1em;
+    line-height: 1.5;
+    /* INSPO END */
+}
+
+main {
+    margin-top: 1000px;
+}
+
+header {
+    position: sticky;
+    display: block;
+    top: 0;
+    width: 100%;
+    background: white;
+    border: 20px solid white;
+    margin: 0;
+    z-index: 100;
+}
+
+.header-content img {
+    width: 5rem;
+    height: auto;
+    display: block;
+}
+
+main, footer {
+    margin: 40px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.roster-section h2 {
+    color: white;
+}
+
+
+/* INSPIRATION: CodePen Timeline Scribble (https://codepen.io/Fischaela/pen/NWNQKW) */
+
+.timeline {
+    margin: 4em auto;
+    position: relative;
+    max-width: 46em;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline-event-thumbnail {
+    display: inline-block;
+    margin: 0 0 1.2em 1.25em;
+    padding: 0.25em 1em;
+    background: var(--color-secondary);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.timeline-event:hover .timeline-event-thumbnail {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -10px;
+    width: 2px;
+    background: black;
+}
+
+.timeline-event {
+    position: relative;
+    list-style: none;
+    margin: 0 0 3em 0;
+}
+
+.timeline-event-icon {
+    position: absolute;
+    top: 0.5em;
+    left: -17px;
+    width: 1em;
+    height: 1em;
+    background: #102F42;
+    transform: rotate(45deg);
+    outline: 10px solid var(--color-primary);
+    transition: transform 0.2s ease-in, background-color 0.2s ease-in;
+}
+
+.timeline-event:hover .timeline-event-icon {
+    transform: rotate(-45deg);
+    /* background-color: var(--color-accent); */
+}
+
+/* INSIRATION END */
+
+.race-card-content {
+    background: var(--color-background);
+    margin-left: 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+dt {
+    background: var(--color-accent);
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 10px 20px;
+    list-style: none;
+}
+
+
+dt a {
+    color: black;
+}
+
+.race-card-content p {
+    display: inline-block;
+    background-color: #102F42;
+    color: white;
+    margin: 5px;
+    margin-top: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.race-card-content p a {
+    color: var(--color-accent);
+}
+
+.race-card-content p a:hover, .race-card-content p a:visited {
+    color: var(--color-primary);
+}
+
+dt a:visited {
+    color: var(--color-visited);
+}
+
+/* .roster-toggle {
+    position: sticky;
+    bottom: 20px;
+    margin: 20px auto;
+    display: block;
+    z-index: 1000;
+
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background: var(--color-secondary);
+    color: white;
+    cursor: pointer;
+} */
+
+.roster-toggle {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    font-size: 1rem;
+
+    padding: 12px 18px;
+    border-radius: 30px;
+    border: none;
+    background: var(--color-secondary);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.roster-section {
+    background-color: var(--color-secondary);
+    border-radius: 30px;
+    padding: 20px;
+    /* margin: 0rem 20rem; */
+    text-align: center;
+}
+
+.roster-section li {
+    background: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 20px;
+    margin-right: 50px;
+    list-style: none;
+    /* display: inline-block; */
+}
+
+.roster-list li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+main .athlete-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+main img {
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+}
+
+table {
+    margin: 30px;
+}
+
+td, th {
+    padding: 12px 16px;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: var(--color-accent);
+}
+
+table caption {
+    background-color: var(--color-secondary);
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 10px;
+}
+
+/* INSPIRATION: CSS-only collapsible "hover" view that reveals more detail when clicked */
+.race-card {
+  background: var(--color-background);
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.race-card summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 20px;
+}
+
+.race-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.race-card summary h3 {
+  margin: 0;
+}
+
+.race-card-content {
+  padding: 0 20px 20px 20px;
+}
+
+.race-card summary:hover,
+.race-card summary:focus {
+  background: var(--color-accent);
+}
+
+.race-card[open] summary {
+  background: var(--color-accent);
+}
+
+.race-card summary::after {
+  content: "+";
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.race-card[open] summary::after {
+  content: "−";
+}
