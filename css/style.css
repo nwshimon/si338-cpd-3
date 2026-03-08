@@ -64,7 +64,7 @@ h2 {
 }
 
 .roster-section h2 {
-    color: white;
+    color: var(--color-background);
 }
 
 
@@ -83,7 +83,7 @@ h2 {
     margin: 0 0 1.2em 1.25em;
     padding: 0.25em 1em;
     background: var(--color-secondary);
-    color: white;
+    color: var(--color-background);
     font-weight: 700;
     font-size: 1rem;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -101,7 +101,7 @@ h2 {
     bottom: 0;
     left: -10px;
     width: 2px;
-    background: black;
+    background: var(--color-secondary);
 }
 
 .timeline-event {
@@ -116,7 +116,7 @@ h2 {
     left: -17px;
     width: 1em;
     height: 1em;
-    background: #102F42;
+    background: var(--color-secondary);
     transform: rotate(45deg);
     outline: 10px solid var(--color-primary);
     transition: transform 0.2s ease-in, background-color 0.2s ease-in;
@@ -147,13 +147,12 @@ dt {
 
 
 dt a {
-    color: black;
+    color: var(--color-text);
 }
 
 .race-card-content p {
     display: inline-block;
-    background-color: #102F42;
-    color: white;
+    background-color: var(--color-secondary);
     margin: 5px;
     margin-top: 20px;
     padding: 5px 10px;
@@ -198,7 +197,7 @@ dt a:visited {
     border-radius: 30px;
     border: none;
     background: var(--color-secondary);
-    color: white;
+    color: var(--color-background);
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -213,7 +212,7 @@ dt a:visited {
 }
 
 .roster-section li {
-    background: white;
+    background: var(--color-background);
     border-radius: 5px;
     padding: 5px 10px;
     margin: 20px;
@@ -251,7 +250,7 @@ td, th {
 }
 
 tr:nth-child(even) {
-    background-color: white;
+    background-color: var(--color-background);
 }
 
 tr:nth-child(odd) {
@@ -260,13 +259,14 @@ tr:nth-child(odd) {
 
 table caption {
     background-color: var(--color-secondary);
-    color: white;
+    color: var(--color-background);
     font-weight: 700;
     font-size: 2rem;
     margin: 10px;
 }
 
-/* INSPIRATION: CSS-only collapsible "hover" view that reveals more detail when clicked */
+/* INSPIRATION: CSS-only collapsible "hover" view that reveals more detail when clicked, using the <details> tag
+SOURCE: https://believemy.com/en/glossaries/html-and-css/details */
 .race-card {
   background: var(--color-background);
   border-radius: 20px;
@@ -311,4 +311,46 @@ table caption {
 
 .race-card[open] summary::after {
   content: "−";
+}
+
+/* INSPIRATION END */
+
+
+/* INSPIRATION: Media-based query on color scheme and reduced motion */
+/* SOURCE: */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .timeline-event:hover .timeline-event-icon {
+    transform: none;
+  }
+}
+
+/* SOURCE: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #123C54;
+    --color-secondary: #BDDCEF;
+    --color-background: #1F1F1F;
+    --color-text: #f5f5f5;
+    --color-accent: #6F2231;
+    --color-visited: #f0a6c1;
+  }
+
+  header {
+    background: var(--color-background);
+    border-color: var(--color-background);
+  }
+
+  a {
+    color: white;
+  }
+
+  a:visited {
+    color: var(--color-visited);
+  }
 }
