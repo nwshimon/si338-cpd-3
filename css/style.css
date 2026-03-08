@@ -122,100 +122,66 @@ h2 {
    ========================= */
 
 .race-heading {
-    margin: 0 0 0.75rem;
+  margin: 0 0 0.75rem;
 }
 
 .race-toggle {
-    display: block;
-    margin-left: 20px;
-    width: 100%;
-    padding: 16px 20px;
-    background: var(--color-background);
-    border: none;
-    border-radius: var(--radius-md);
-    color: var(--color-text);
-    font: inherit;
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-align: left;
-    cursor: pointer;
-    box-shadow: none;
-    transition: background-color 0.2s ease-in;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 16px 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--color-background);
+  border: none;
+  border-radius: 20px;
+  color: var(--color-text);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: none;
 }
 
 .race-toggle:hover,
 .race-toggle:focus-visible,
 .race-toggle[aria-expanded="true"] {
-    background: var(--color-accent);
+  background: var(--color-accent);
 }
 
 .race-toggle::after {
-    content: "+";
-    float: right;
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1;
-    margin-left: 20px;
+  content: "+";
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .race-toggle[aria-expanded="true"]::after {
-    content: "−";
+  content: "−";
 }
 
 .race-card-content {
-    margin: -0.25rem 0 1.5rem;
-    padding: 0 20px 20px;
-    background: var(--color-background);
-    border-radius: 0 0 var(--radius-md) var(--radius-md);
-    margin-left: 20px;
+  margin: -0.25rem 0 1.5rem;
+  padding: 0 20px 20px;
+  background: var(--color-background);
+  border-radius: 0 0 20px 20px;
 }
 
 .race-card-content[hidden] {
-    display: none;
+  display: none;
 }
 
 .race-card-content h4 {
-    margin-top: 0;
-    padding-top: 0.5rem;
+  margin: 0;
+  padding-top: 0.75rem;
 }
 
 .race-card-content dl {
-    margin: 0;
+  margin: 0;
 }
-
-.race-card-content dt {
-    margin: 10px 20px;
-    padding: 5px 10px;
-    background: var(--color-accent);
-    border-radius: var(--radius-sm);
-}
-
-.race-card-content dd {
-    margin: 0 20px 12px;
-}
-
-.race-card-content p {
-    display: inline-block;
-    margin: 20px 5px 5px 20px;
-    padding: 5px 10px;
-    background: var(--color-secondary);
-    border-radius: var(--radius-sm);
-}
-
-.race-card-content p a {
-    color: var(--color-accent);
-    text-decoration: none;
-}
-
-.race-card-content p a:hover,
-.race-card-content p a:focus-visible {
-    color: var(--color-primary);
-}
-
-.race-card-content p a:visited {
-    color: var(--color-primary);
-}
-
 
 /* =========================
    RACE & ATHLETE PAGE: Tables & Table Styling
